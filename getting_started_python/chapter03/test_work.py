@@ -31,6 +31,13 @@ elif num <= 100:
 else:
     print("Something else") 
     
+    
+    
+
+# Try Catch | Exception Handling
+
+
+    
 
 
 
