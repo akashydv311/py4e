@@ -6,14 +6,13 @@
 
 # Use the file name mbox-short.txt as the file name
 fname = input("Enter file name: ")
+data = ''
 try:
     fh = open(fname)
+    data = fh.read()
+    print(data)
 except Exception as err:
     print("Unable to open file:", err)
 
-for line in fh:
-    if line.startswith("X-DSPAM-Confidence:"):
-        
-        print()
 
 print("Done")

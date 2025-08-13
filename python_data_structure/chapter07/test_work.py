@@ -41,20 +41,33 @@ except Exception as err:
 #clean_text = text.strip()
 #print(clean_text)
 
+#
+#try:
+#    fy = open('myfile.txt')
+#    
+#    for line in fy:
+#        line = line.rstrip()
+#        print(line)
+#
+#except Exception as err:
+#    print("Error: ", err)
+#        
 
-try:
-    fy = open('myfile.txt')
-    
-    for line in fy:
-        line = line.rstrip()
-        print(line)
-
-except Exception as err:
-    print("Error: ", err)
-        
 
 
+lines = [
+    "Item: Laptop Price: 55000",
+    "Item: Phone Price: 30000",
+    "Item: Tablet Price: 25000"
+]
 
+for line in lines:
+    parts = line.split("Price:")
+    print(len(parts))
+    if len(parts) > 1:
+        price = parts[1].strip()
+        print(price)
+    print(parts)
 
 
 
