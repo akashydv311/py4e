@@ -63,7 +63,6 @@ lines = [
 
 for line in lines:
     parts = line.split("Price:")
-    print(len(parts))
     if len(parts) > 1:
         price = parts[1].strip()
         print(price)

@@ -5,14 +5,25 @@
 
 
 # Use the file name mbox-short.txt as the file name
+f# Use the file name mbox-short.txt as the file name
 fname = input("Enter file name: ")
-data = ''
 try:
     fh = open(fname)
     data = fh.read()
-    print(data)
+    #print(data)
+    count_line = 0
+    total = 0.0
+    for line in data.splitlines():
+        if line.startswith("X-DSPAM-Confidence:"):
+            count_line = count_line + 1
+            curr_val = float(line.split(":")[1])
+            total = total + curr_val
+            
+    ans = total / count_line
+    print("Average spam confidence:", ans)
+except ArthemiticException as err:
+    print("Error: ", err)
 except Exception as err:
     print("Unable to open file:", err)
 
 
-print("Done")
